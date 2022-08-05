@@ -10,6 +10,7 @@ from market.market_cmd import eco
 
 client = discord.Client()
 
+TOKEN = ""
 
 @client.event
 async def on_ready():
@@ -63,4 +64,4 @@ async def on_message(message):
         elif message.content[0:len("eco")].lower() == "eco":
             await eco(message)
 
-client.run('OTkzMjM2Njg1MjUwOTA4MjYx.GReV5m.wYp7KTpqDYcbEk6Pob4UomHlTbflxofcwKS__s')
+client.run(TOKEN)
