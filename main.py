@@ -4,13 +4,11 @@ from common import connected_channels
 from play_cmd import play
 from leave_cmd import leave
 from remove_queue_cmd import remove
-from random_cmd import random, random_option
-from market.market_cmd import eco
-
+import os
 
 client = discord.Client()
 
-TOKEN = ""
+TOKEN = os.environ.get("DISCORD", None)
 
 @client.event
 async def on_ready():
@@ -58,10 +56,5 @@ async def on_message(message):
         elif message.content[0:len("remove")].lower() == "remove":
             await remove(message)
 
-        elif message.content[0:len("random")].lower() == "random":
-            await random_option(message)
-
-        elif message.content[0:len("eco")].lower() == "eco":
-            await eco(message)
 
 client.run(TOKEN)
