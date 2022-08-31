@@ -6,7 +6,7 @@ from leave_cmd import leave
 from remove_queue_cmd import remove
 import os
 
-client = discord.Client()
+client = discord.Client(intents=discord.Intents.all())
 
 TOKEN = os.environ.get("DISCORD", None)
 @client.event
